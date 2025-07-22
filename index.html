@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Mensagem para Yasmim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="etapa-1" class="etapa">
+            <h1>Ei você, Yasmim Tarquinio.</h1>
+            <p>Esse é o meu último site, pois a criatividade acabou e virei um PCD.</p>
+            <div class="imagens-laterais">
+                <img src="yasmim.png" alt="Sua primeira imagem aqui">
+                <img src="voce.png" alt="Sua segunda imagem aqui">
+            </div>
+            <button onclick="mostrarEtapa(2)">Clique para avançar</button>
+        </div>
+
+        <div id="etapa-2" class="etapa" style="display: none;">
+            <h2>Não fique triste.</h2>
+            <p>Sei que o Ozzy Osbourne morreu. Eu também o amava. A música dele sempre vai reverberar na nossa alma.</p>
+            <div class="galeria-ozzy">
+                <img src="ozzy1.png" alt="Foto do Ozzy 1">
+                <img src="ozzy2.png" alt="Foto do Ozzy 2">
+                <img src="ozzy3.png" alt="Foto do Ozzy 3">
+            </div>
+            <button onclick="mostrarEtapa(3)">Continuar</button>
+        </div>
+
+        <div id="etapa-3" class="etapa" style="display: none;">
+            <div class="cantadas-container">
+                <div class="cantada-bloco">
+                    <p>Acho que estou meio 'Paranoid', porque não consigo tirar você da minha cabeça um segundo sequer.</p>
+                </div>
+                <div class="cantada-bloco">
+                    <p>O Rodolfo cantava sobre a 'Mulher de Fases', mas a verdade é que todas as suas fases me parecem perfeitas.</p>
+                </div>
+            </div>
+            <button onclick="mostrarEtapa(4)">Uma última coisa...</button>
+        </div>
+        
+        <div id="etapa-4" class="etapa" style="display: none;">
+            <h2>Vamos sair sábado à noite, às 20:30? Te adoro princesa</h2>
+            <p>Te pego na sua casa.</p>
+            <h3>(Isso não é uma pergunta, eu já reservei o carro).</h3>
+        </div>
+
+    </div>
+
+    <script>
+        function mostrarEtapa(numeroEtapa) {
+            // Esconde todas as etapas
+            document.querySelectorAll('.etapa').forEach(div => {
+                div.style.display = 'none';
+            });
+
+            // --- MUDANÇA PRINCIPAL AQUI ---
+            // Verifica se a etapa é a 3 (das cantadas)
+            if (numeroEtapa === 3) {
+                // Se for, muda o fundo da PÁGINA INTEIRA para rosa
+                document.body.style.backgroundColor = '#AD1457';
+            } else {
+                // Se for qualquer outra etapa, volta para o fundo escuro padrão
+                document.body.style.backgroundColor = '#1a1a1a';
+            }
+            // --- FIM DA MUDANÇA ---
+
+            // Mostra a etapa correta
+            const proximaEtapa = document.getElementById('etapa-' + numeroEtapa);
+            if (proximaEtapa) {
+                proximaEtapa.style.display = 'flex';
+            }
+        }
+    </script>
+
+</body>
+</html>

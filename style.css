@@ -1,0 +1,190 @@
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow-x: hidden;
+    transition: background-color 0.8s ease;
+}
+
+.container {
+    max-width: 1200px; 
+    padding: 40px;
+}
+
+.etapa {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+#etapa-1 {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98) translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.2em; font-weight: normal; color: #ffcc00; }
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+button {
+    background-color: #ffcc00;
+    color: #1a1a1a;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 40px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.imagens-laterais, .galeria-ozzy {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Adicionado para melhor responsividade */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.imagens-laterais img {
+    width: 300px;
+}
+
+.galeria-ozzy img {
+    width: 200px;
+}
+
+.cantadas-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    gap: 40px;
+    width: 100%;
+}
+
+.cantada-bloco {
+    flex: 1;
+    background-color: #252525; 
+    border: 2px solid #ffffff; 
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.cantada-bloco:hover {
+    transform: scale(1.03);
+}
+
+.cantada-bloco p {
+    font-size: 2.2em; 
+    font-weight: bold;
+    line-height: 1.4;
+    max-width: 100%;
+    color: #ffffff;
+}
+
+#etapa-4 h2 {
+    font-size: 4em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+#etapa-4 p {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#etapa-4 h3 {
+    font-size: 1.8em;
+    color: #ffcc00;
+}
+
+/* ======================================================= */
+/* --- REGRAS PARA CELULAR (DESIGN RESPONSIVO) --- */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Diminui o espaçamento nas laterais */
+    }
+
+    /* Ajusta o tamanho das fontes principais para telas menores */
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    p { font-size: 1.1em; }
+
+    /* Empilha as duas imagens iniciais */
+    .imagens-laterais {
+        flex-direction: column;
+    }
+
+    /* Empilha os blocos das cantadas */
+    .cantadas-container {
+        flex-direction: column;
+        gap: 20px; /* Diminui o espaço entre elas */
+    }
+
+    .cantada-bloco p {
+        font-size: 1.8em; /* Ajusta o tamanho da fonte da cantada */
+    }
+
+    /* Ajusta o tamanho das fontes na tela final */
+    #etapa-4 h2 {
+        font-size: 2.8em;
+    }
+
+    #etapa-4 p {
+        font-size: 1.5em;
+    }
+
+    #etapa-4 h3 {
+        font-size: 1.3em;
+    }
+}
